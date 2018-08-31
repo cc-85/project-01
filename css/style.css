@@ -87,6 +87,22 @@ h1 {
   width: 125px;
 }
 
-.red {
+.redSushi {
   background-color: red;
+}
+
+.greenSushi {
+  background-color: green;
+}
+
+.purpleSushi {
+  background-color: purple;
+}
+
+.yellowSushi {
+  background-color: yellow;
+}
+
+.blueSushi {
+  background-color: blue;
 }

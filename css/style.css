@@ -1,0 +1,92 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+    background-color: Honeydew;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: BlanchedAlmond;
+  width: 1200px;
+  height: 630px;
+  margin: auto;
+}
+
+h1 {
+  font-size: 15px;
+}
+
+.top-content {
+  background-color: LavenderBlush;
+  display: flex;
+  height: 70%;
+}
+
+.character {
+  background-color: Thistle;
+  flex-grow: 1;
+}
+
+.middle-section {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 6;
+}
+
+.character-sushi-selection {
+  display: flex;
+  background-color: MediumAquamarine;
+  height: 25%;
+}
+
+.character-sushi-selection * {
+  border: 1px solid black;
+  margin: 10px 6px;
+  flex-grow: 1;
+}
+
+.center-block {
+  display: flex;
+  //flex-direction: column;
+  height: 75%;
+}
+
+.player-selection {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: MintCream;
+  flex-grow: 3;
+  width: 130px;
+}
+
+.player-selection * {
+  border: 1px solid black;
+  margin: 10px 6px;
+  width: 140px;
+}
+
+.stats {
+  background-color: NavajoWhite;
+  flex-grow: 1;
+}
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: CadetBlue;
+  width: 100%;
+  height: 30%;
+}
+
+.menu * {
+  border: 1px solid black;
+  margin: 2px 4px;
+  width: 125px;
+}
+
+.red {
+  background-color: red;
+}

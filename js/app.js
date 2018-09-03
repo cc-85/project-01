@@ -3,19 +3,21 @@ $(() => {
 
   let scoreNumber = 0;
   let clickedItem = '';
+  let currentLevel = 1;
   const $score = $('.score');
   const $items = $('.item');
   const $plates = $('.plate');
   const $sendOrderButton = $('.send-order');
   const $clearPlateButton = $('.clear-plate');
-  const $playAgain = $('.play-again');
   const $tips = $('.tips');
+  const $nextLevelButton = $('.next-level');
   const $playAgainButton = $('.play-again');
   const $timerScreen = $('.timer');
+  const $level = $('.level');
 
 
   //starts timer!
-  startTimer();
+  startTimer(10);
 
   //generates an array of sushi at random
   function randomSushiGenerator(){
@@ -35,15 +37,15 @@ $(() => {
 
 
   // adds random sushi selection to bar at top
-  function newOrder() {
+  function newOrder(orderSize) {
     $('.character-sushi-selection')
-      .find('div').slice(0, 3)
+      .find('div').slice(0, orderSize)
       .removeClass()
       .addClass('character-selection')
       .addClass(randomSushiGenerator);
   }
 
-  newOrder();
+  newOrder(3);
 
   // an item from the menu is clicked and stored in clickedItem variable
   $items.on('click', (e) => {
@@ -93,31 +95,60 @@ $(() => {
     winGame();
     clearPlate();
     randomSushiGenerator();
-    newOrder();
+    if (currentLevel === 1) {
+      newOrder(3);
+    } else if (currentLevel === 2) {
+      newOrder(6);
+    } else if (currentLevel === 3) {
+      newOrder(10);
+    }
   });
+
+  $nextLevelButton.on('click', () => {
+    //scoreNumber = 0;
+    clearPlate();
+    $nextLevelButton.hide();
+    $sendOrderButton.show();
+    console.log(scoreNumber);
+    $score.text(scoreNumber);
+    randomSushiGenerator();
+
+    currentLevel++;
+    console.log(currentLevel);
+
+    if (currentLevel === 1) {
+      $level.text(currentLevel);
+      newOrder(3);
+      $timerScreen.text('30');
+      startTimer(30);
+    } else if (currentLevel === 2) {
+      $level.text(currentLevel);
+      newOrder(6);
+      $timerScreen.text('45');
+      startTimer(45);
+    } else if (currentLevel === 3) {
+      $level.text(currentLevel);
+      newOrder(10);
+      $timerScreen.text('60');
+      startTimer(60);
+    }
+  });
+
 
 
   $playAgainButton.on('click', () => {
     clearPlate();
-    $playAgain.hide();
+    $playAgainButton.hide();
     $sendOrderButton.show();
     scoreNumber = 0;
     console.log(scoreNumber);
     $score.text(scoreNumber);
     randomSushiGenerator();
-    newOrder();
-    $timerScreen.text('30');
-    startTimer();
   });
 
 
-
-
-
-
-
-  function startTimer() {
-    let currentTime = 30;
+  function startTimer(startTime) {
+    let currentTime = startTime;
     let timerId = 0;
 
     timerId = setInterval(() => {
@@ -125,13 +156,22 @@ $(() => {
       $timerScreen.text(currentTime);
       if(currentTime === 0) {
         clearInterval(timerId);
-        gameEnd();
+        if(currentLevel === 1) {
+          $sendOrderButton.hide();
+          $nextLevelButton.show();
+        } else if (currentLevel === 2) {
+          $sendOrderButton.hide();
+          $nextLevelButton.show();
+        } else if (currentLevel === 3) {
+          gameEnd();
+        }
       }
     }, 1000);
   }
 
+
   function gameEnd() {
-    $playAgain.show();
+    $playAgainButton.show();
     $sendOrderButton.hide();
     $tips.addClass('tips-end');
   }

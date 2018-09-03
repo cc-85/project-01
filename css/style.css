@@ -176,6 +176,10 @@ button {
   display: none;
 }
 
+.next-level {
+  display: none;
+}
+
 .tips-end {
   font-weight: bold;
   color: OliveDrab;

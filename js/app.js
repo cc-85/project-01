@@ -12,6 +12,10 @@ $(() => {
   const $tips = $('.tips');
   const $nextLevelButton = $('.next-level');
   const $playAgainButton = $('.play-again');
+  const $startGameButton = $('.start-game');
+  const $startPage = $('.start-page');
+  const $mainPage = $('main');
+
   const $timerScreen = $('.timer');
   const $level = $('.level');
   const sushiTypes = [
@@ -35,8 +39,28 @@ $(() => {
   ];
 
 
-  //starts timer!
-  startTimer(10);
+  $startGameButton.on('click', () => {
+    //starts timer!
+    startTimer(10);
+    $startPage.hide();
+    $mainPage.show();
+
+    //scoreNumber = 0;
+    // clearPlate();
+    // $nextLevelButton.hide();
+    // $sendOrderButton.show();
+    // console.log(scoreNumber);
+    // $score.text(scoreNumber);
+    // randomSushiGenerator();
+    //
+    // currentLevel++;
+    // console.log(currentLevel);
+    //
+    // $level.text(currentLevel);
+
+  });
+
+
 
   //generates an array of sushi at random
   function randomSushiGenerator(){
@@ -84,7 +108,7 @@ $(() => {
 
     // stores the playersSelection as an array for later comparison
     const playerSelectionArray = $('div.player-selection div.plate').map(function() {
-      return $(this).attr('class').replace('plate ', '').replace('plate', '');
+      return $(this).attr('class').replace('plate', '').replace('ui-droppable', '').replace('ui-draggable', '').replace('ui-draggable-dragging', '').trim();
     }).get();
     const playerSelectionSorted = playerSelectionArray.sort().join('');
     console.log(playerSelectionSorted);

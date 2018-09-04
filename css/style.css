@@ -4,13 +4,13 @@
 }
 
 body {
-    background-color: Honeydew;
+    background-color: #FDEFE6;
 }
 
 .start-page {
   width: 100vw;
   height: 100vh;
-  background-color: purple;
+  background-color:  #FDEFE6;
   display: flex;
   top: 0;
   left: 0;
@@ -21,14 +21,23 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   width: 800px;
   height: 400px;
   margin: auto;
-  background-color: #FDEFE6;
+  background-color: white;
+  border: 3px solid #FAE0CB;
+  border-radius: 10px;
+  padding: 40px;
+}
+
+.start-game{
+  width: 300px;
+
 }
 
 main {
-  display: flex;
+  display: none;
   flex-direction: column;
   justify-content: center;
   background-color: BlanchedAlmond;
@@ -39,6 +48,7 @@ main {
 
 h1 {
   font-size: 15px;
+  display: none;
 }
 
 .top-content {

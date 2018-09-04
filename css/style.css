@@ -7,17 +7,24 @@ body {
     background-color: #FDEFE6;
 }
 
-.start-page {
+.start-page, .end-page {
   width: 100vw;
   height: 100vh;
   background-color:  #FDEFE6;
-  display: flex;
   top: 0;
   left: 0;
   z-index: 10;
 }
 
-.start-center {
+.start-page {
+  display: flex;
+}
+
+.end-page {
+  display: none;
+}
+
+.start-center, .end-center {
   display: flex;
   flex-direction: column;
   justify-content: center;

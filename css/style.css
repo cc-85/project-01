@@ -7,6 +7,26 @@ body {
     background-color: Honeydew;
 }
 
+.start-page {
+  width: 100vw;
+  height: 100vh;
+  background-color: purple;
+  display: flex;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+.start-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 800px;
+  height: 400px;
+  margin: auto;
+  background-color: #FDEFE6;
+}
+
 main {
   display: flex;
   flex-direction: column;
@@ -40,14 +60,17 @@ h1 {
 
 .character-sushi-selection {
   display: flex;
-  background-color: MediumAquamarine;
+  background-color: #FAE0CB;
   height: 25%;
 }
 
-.character-sushi-selection * {
-  border: 1px solid black;
+.character-sushi-selection > div {
+  /* border: 1px solid black; */
   margin: 10px 6px;
   flex-grow: 1;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .center-block {
@@ -92,7 +115,6 @@ h1 {
 }
 
 .menu * {
-  border: 1px solid black;
   margin: 2px 4px;
   width: 125px;
 }
@@ -102,6 +124,9 @@ h1 {
   border-radius: 10px;
   margin: 15px 2px 0 2px;
   animation: squidge .6s linear infinite;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .plate:hover {
@@ -123,53 +148,89 @@ h1 {
   }
 }
 
-.tunaNigiri {
-  /* background-color: red; */
-  background-image: url(/Users/caoimheclarke/development/project-01/assets/images/tuna-nigiri.png);
+.item > div {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
+  height: 100%;
+  border: 2px solid #FAE0CB;
+  border-radius: 10px;
+}
 
+.tunaNigiri {
+  background-image: url(/Users/caoimheclarke/development/project-01/assets/images/tuna-nigiri.png);
 }
 
 .salmonNigiri {
-  /* background-color: green; */
   background-image: url(/Users/caoimheclarke/development/project-01/assets/images/salmon-nigiri.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
 }
 
 .prawnNigiri {
-  /* background-color: purple; */
   background-image: url(/Users/caoimheclarke/development/project-01/assets/images/prawn-nigiri.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
 }
 
 .tamagoNigiri {
-  /* background-color: yellow; */
   background-image: url(/Users/caoimheclarke/development/project-01/assets/images/tamago-nigiri.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
 }
 
 .tunaMaki {
-  /* background-color: blue; */
   background-image: url(/Users/caoimheclarke/development/project-01/assets/images/tuna-maki.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
+}
+
+.salmonVegMaki {
+  background-image: url(/Users/caoimheclarke/development/project-01/assets/images/salmon-veg-maki.png);
+}
+
+.ikuraRoll {
+  background-image: url(/Users/caoimheclarke/development/project-01/assets/images/ikura-roll.png);
+}
+
+.tunaTemaki {
+  background-image: url(/Users/caoimheclarke/development/project-01/assets/images/tuna-temaki.png);
+}
+
+.tunaSashimi {
+  background-image: url(/Users/caoimheclarke/development/project-01/assets/images/tuna-sashimi.png);
+}
+
+.prawns {
+  background-image: url(/Users/caoimheclarke/development/project-01/assets/images/prawns.png);
+}
+
+.wasabi {
+  background-image: url(/Users/caoimheclarke/development/project-01/assets/images/wasabi.png);
+}
+
+.pickledGinger {
+  background-image: url(/Users/caoimheclarke/development/project-01/assets/images/pickled-ginger.png);
+}
+
+.soySauce {
+  background-image: url(/Users/caoimheclarke/development/project-01/assets/images/soy-sauce.png);
+}
+
+.misoSoup {
+  background-image: url(/Users/caoimheclarke/development/project-01/assets/images/miso-soup.png);
+}
+
+.yakisoba {
+  background-image: url(/Users/caoimheclarke/development/project-01/assets/images/yakisoba.png);
+}
+
+.shuCreams {
+  background-image: url(/Users/caoimheclarke/development/project-01/assets/images/shu-creams.png);
+}
+
+.purin {
+  background-image: url(/Users/caoimheclarke/development/project-01/assets/images/purin.png);
 }
 
 button {
   height: 120px;
   font-size: 27px;
   padding: 20px;
-  color: OldLace;
-  background-color: Peru;
+  color: oldLace;
+  background-color: #BC825B;
 }
 
 .play-again {
@@ -182,7 +243,7 @@ button {
 
 .tips-end {
   font-weight: bold;
-  color: OliveDrab;
+  color: oliveDrab;
 }
 
 .clear-plate {
@@ -190,4 +251,6 @@ button {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
+  border: 2px solid #FAE0CB;
+  border-radius: 10px;
 }

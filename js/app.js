@@ -14,6 +14,25 @@ $(() => {
   const $playAgainButton = $('.play-again');
   const $timerScreen = $('.timer');
   const $level = $('.level');
+  const sushiTypes = [
+    'tunaNigiri',
+    'salmonNigiri',
+    'prawnNigiri',
+    'tamagoNigiri',
+    'tunaMaki',
+    'salmonVegMaki',
+    'ikuraRoll',
+    'tunaTemaki',
+    'tunaSashimi',
+    'prawns',
+    'wasabi',
+    'pickledGinger',
+    'soySauce',
+    'misoSoup',
+    'yakisoba',
+    'shuCreams',
+    'purin'
+  ];
 
 
   //starts timer!
@@ -21,15 +40,8 @@ $(() => {
 
   //generates an array of sushi at random
   function randomSushiGenerator(){
-    const sushiTypes = [
-      'tunaNigiri',
-      'salmonNigiri',
-      'prawnNigiri',
-      'tamagoNigiri',
-      'tunaMaki'
-    ];
     //console.log(sushiTypes);
-    const randomNumber = Math.floor(Math.random()* 5);
+    const randomNumber = Math.floor(Math.random()* 17);
     //console.log(randomNumber);
     //console.log(sushiTypes[randomNumber]);
     return sushiTypes[randomNumber];
@@ -48,7 +60,7 @@ $(() => {
   newOrder(3);
 
   // an item from the menu is clicked and stored in clickedItem variable
-  $items.on('click', (e) => {
+  $items.on('drag', (e) => {
     clickedItem = $(e.target).attr('class').replace('item ', '');
     //console.log(clickedItem);
   });
@@ -116,20 +128,16 @@ $(() => {
     currentLevel++;
     console.log(currentLevel);
 
+    $level.text(currentLevel);
+
     if (currentLevel === 1) {
-      $level.text(currentLevel);
       newOrder(3);
-      $timerScreen.text('30');
       startTimer(30);
     } else if (currentLevel === 2) {
-      $level.text(currentLevel);
       newOrder(6);
-      $timerScreen.text('45');
       startTimer(45);
     } else if (currentLevel === 3) {
-      $level.text(currentLevel);
       newOrder(10);
-      $timerScreen.text('60');
       startTimer(60);
     }
   });
@@ -148,6 +156,7 @@ $(() => {
 
 
   function startTimer(startTime) {
+    $timerScreen.text(startTime);
     let currentTime = startTime;
     let timerId = 0;
 
@@ -180,14 +189,32 @@ $(() => {
     $plates.removeClass().addClass('plate');
   }
 
-  $clearPlateButton.on('click', () => {
-    clearPlate();
+  $clearPlateButton.on('click', clearPlate);
+
+
+
+  // $( function() {
+  //   $('#draggable').draggable({ revert: true });
+  //
+  //
+  //   $('#droppable').droppable({
+  //     drop: function() {
+  //       $(this)
+  //         .addClass(clickedItem);
+  //     }
+  //   });
+  // } );
+
+  $items.draggable({
+    revert: true,
+    revertDuration: 0
   });
 
-
-
-
-
-
+  $plates.droppable({
+    drop(e, ui) {
+      const className = ui.draggable.find('div').attr('class');
+      $(this).addClass(className);
+    }
+  });
 
 });

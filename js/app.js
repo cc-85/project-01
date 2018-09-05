@@ -171,12 +171,12 @@ $(() => {
 
     // an item from the menu is clicked and stored in clickedItem variable
     let clickedItem = '';
-    $items.on('click', (e) => {
+    $items.on('touchstart', (e) => {
       clickedItem = $(e.target).attr('class').replace('item ', '');
     });
 
     // a plate div is clicked and populated with item stored in clickedItem variable
-    $plates.on('click', (e) => {
+    $plates.on('touchstart', (e) => {
       $(e.target).removeClass().addClass(`plate ${clickedItem}`);
     });
   } else {

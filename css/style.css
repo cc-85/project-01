@@ -105,7 +105,7 @@ h1 {
   background-color: #FDEFE6;
   flex-grow: 3;
   width: 130px;
-  background-image: url(/Users/caoimheclarke/development/project-01/assets/images/bg-plateonly.jpg);
+  background-image: url(../assets/images/bg-plateonly.jpg);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -178,11 +178,11 @@ h1 {
 }
 
 .tunaNigiri {
-  background-image: url(/Users/caoimheclarke/development/project-01/assets/images/tuna-nigiri.png);
+  background-image: url(../assets/images/tuna-nigiri.png);
 }
 
 .salmonNigiri {
-  background-image: url(/Users/caoimheclarke/development/project-01/assets/images/salmon-nigiri.png);
+  background-image: url(../assets/images/salmon-nigiri.png);
 }
 
 .prawnNigiri {
@@ -190,59 +190,59 @@ h1 {
 }
 
 .tamagoNigiri {
-  background-image: url(/Users/caoimheclarke/development/project-01/assets/images/tamago-nigiri.png);
+  background-image: url(../assets/images/tamago-nigiri.png);
 }
 
 .tunaMaki {
-  background-image: url(/Users/caoimheclarke/development/project-01/assets/images/tuna-maki.png);
+  background-image: url(../assets/images/tuna-maki.png);
 }
 
 .salmonVegMaki {
-  background-image: url(/Users/caoimheclarke/development/project-01/assets/images/salmon-veg-maki.png);
+  background-image: url(../assets/images/salmon-veg-maki.png);
 }
 
 .ikuraRoll {
-  background-image: url(/Users/caoimheclarke/development/project-01/assets/images/ikura-roll.png);
+  background-image: url(../assets/images/ikura-roll.png);
 }
 
 .tunaTemaki {
-  background-image: url(/Users/caoimheclarke/development/project-01/assets/images/tuna-temaki.png);
+  background-image: url(../assets/images/tuna-temaki.png);
 }
 
 .tunaSashimi {
-  background-image: url(/Users/caoimheclarke/development/project-01/assets/images/tuna-sashimi.png);
+  background-image: url(../assets/images/tuna-sashimi.png);
 }
 
 .prawns {
-  background-image: url(/Users/caoimheclarke/development/project-01/assets/images/prawns.png);
+  background-image: url(../assets/images/prawns.png);
 }
 
 .wasabi {
-  background-image: url(/Users/caoimheclarke/development/project-01/assets/images/wasabi.png);
+  background-image: url(../assets/images/wasabi.png);
 }
 
 .pickledGinger {
-  background-image: url(/Users/caoimheclarke/development/project-01/assets/images/pickled-ginger.png);
+  background-image: url(../assets/images/pickled-ginger.png);
 }
 
 .soySauce {
-  background-image: url(/Users/caoimheclarke/development/project-01/assets/images/soy-sauce.png);
+  background-image: url(../assets/images/soy-sauce.png);
 }
 
 .misoSoup {
-  background-image: url(/Users/caoimheclarke/development/project-01/assets/images/miso-soup.png);
+  background-image: url(../assets/images/miso-soup.png);
 }
 
 .yakisoba {
-  background-image: url(/Users/caoimheclarke/development/project-01/assets/images/yakisoba.png);
+  background-image: url(../assets/images/yakisoba.png);
 }
 
 .shuCreams {
-  background-image: url(/Users/caoimheclarke/development/project-01/assets/images/shu-creams.png);
+  background-image: url../assets/images/shu-creams.png);
 }
 
 .purin {
-  background-image: url(/Users/caoimheclarke/development/project-01/assets/images/purin.png);
+  background-image: url(../assets/images/purin.png);
 }
 
 button {
@@ -269,7 +269,7 @@ button {
 }
 
 .clear-plate {
-  background-image: url(/Users/caoimheclarke/development/project-01/assets/images/clear-plate.png);
+  background-image: url(../assets/images/clear-plate.png);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -278,7 +278,7 @@ button {
 }
 
 .logo {
-  background-image: url(/Users/caoimheclarke/development/project-01/assets/images/logo2.png);
+  background-image: url(../assets/images/logo2.png);
   background-color: #FAE0CB;
   background-size: contain;
   background-repeat: no-repeat;

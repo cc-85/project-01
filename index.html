@@ -1,30 +1,34 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>WDI Project 1</title>
-    <link rel="stylesheet" href="css/style.css">
-    <script
-src="https://code.jquery.com/jquery-3.3.1.min.js"
-integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-crossorigin="anonymous"></script>
-<script src="js/app.js" charset="utf-8"></script>
+<head>
+  <meta charset="utf-8">
+  <title>WDI Project 1</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+  <script src="js/app.js" charset="utf-8"></script>
 
+  <script src="http://code.jquery.com/jquery-1.8.2.js"></script>
+  <script src="http://code.jquery.com/ui/1.9.1/jquery-ui.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <h1>Sushi Squish!</h1>
 
-<script src="http://code.jquery.com/jquery-1.8.2.js"></script>
-<script src="http://code.jquery.com/ui/1.9.1/jquery-ui.js"></script>
-  </head>
-  <body>
-    <h1>Sushi Squish!</h1>
-
-    <main>
-      <div class="top-content">
-        <!-- -----------------character side bar-------------------- -->
-        <div class="character">character
-          <img src="">
-          <p class="character"></p>
+  <main>
+    <div class="top-content">
+      <!------------character side bar---------- -->
+      <div class="character">
+        <div class="character-image logo">
         </div>
-        <div class="middle-section">
+        <p class="character-copy"></p>
+      </div>
+      <div class="middle-section">
+        <div class="top-bar">These please:</div>
+
+<!------------sushi order - top bar---------- -->
           <div class="character-sushi-selection">
             <div></div>
             <div></div>
@@ -37,112 +41,114 @@ crossorigin="anonymous"></script>
             <div></div>
             <div></div>
           </div>
-          <div class="center-block">
 
-            <div class="player-selection">
-              <div class="plate"></div>
-              <div class="plate"></div>
-              <div class="plate"></div>
-              <div class="plate"></div>
-              <div class="plate"></div>
-              <div class="plate"></div>
-              <div class="plate"></div>
-              <div class="plate"></div>
-              <div class="plate"></div>
-              <div class="plate"></div>
-            </div>
-            <div class="chopsticks"><img src="/Users/caoimheclarke/development/project-01/assets/images/chopsticks.jpg" alt="chopsticks">
-            </div>
-            <div class="stats">
-              <button class="send-order">SEND <br>ORDER</button>
-              <button class="next-level">Next level</button>
-              <!-- <button class="play-again">Play again?</button> -->
-              <p>TIME</p>
-              <p class="timer">30</p>
-              <p>Level <span class="level">1</span></p>
-              <p>TIPS</p>
-              <p class="tips">&yen;<span class="score">0</span></p>
-            </div>
+        <div class="center-block">
+
+          <div class="player-selection">
+            <div class="plate"></div>
+            <div class="plate"></div>
+            <div class="plate"></div>
+            <div class="plate"></div>
+            <div class="plate"></div>
+            <div class="plate"></div>
+            <div class="plate"></div>
+            <div class="plate"></div>
+            <div class="plate"></div>
+            <div class="plate"></div>
           </div>
-
+          <div class="chopsticks"><img src="/Users/caoimheclarke/development/project-01/assets/images/chopsticks.jpg" alt="chopsticks">
+          </div>
+          <div class="stats">
+            <button class="send-order">SEND <br>ORDER</button>
+            <button class="next-level">Next level</button>
+            <p>TIME</p>
+            <p class="timer">30</p>
+            <p>Level <span class="level">1</span></p>
+            <p>TIPS</p>
+            <p class="tips">&yen;<span class="score">0</span></p>
+          </div>
         </div>
-
 
       </div>
 
-      <!-- --------------menu----------------- -->
-      <div class="menu">
-        <div class="item">
-          <div class="tunaNigiri"></div>
-        </div>
-        <div class="item">
-          <div class="salmonNigiri"></div>
-        </div>
-        <div class="item">
-          <div class="prawnNigiri"></div>
-        </div>
-        <div class="item">
-          <div class="tamagoNigiri"></div>
-        </div>
-        <div class="item">
-          <div class="tunaMaki"></div>
-        </div>
-        <div class="item">
-          <div class="salmonVegMaki"></div>
-        </div>
-        <div class="item">
-          <div class="ikuraRoll"></div>
-        </div>
-        <div class="item">
-          <div class="tunaTemaki"></div>
-        </div>
-        <div class="item">
-          <div class="tunaSashimi"></div>
-        </div>
-        <div class="item">
-          <div class="prawns"></div>
-        </div>
-        <div class="item">
-          <div class="wasabi"></div>
-        </div>
-        <div class="item">
-          <div class="pickledGinger"></div>
-        </div>
-        <div class="item">
-          <div class="soySauce"></div>
-        </div>
-        <div class="item">
-          <div class="misoSoup"></div>
-        </div>
-        <div class="item">
-          <div class="yakisoba"></div>
-        </div>
-        <div class="item">
-          <div class="shuCreams"></div>
-        </div>
-        <div class="item">
-          <div class="purin"></div>
-        </div>
-        <div class="clear-plate"></div>
 
-      </div>
-    </main>
-<!-- --------------start page----------------- -->
-    <div class="start-page">
-      <div class="start-center">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-        <button class="start-game">Start!</button>
-      </div>
     </div>
 
-
-<!-- --------------end page----------------- -->
-    <div class="end-page">
-      <div class="end-center">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-        <button class="play-again">Play again?</button>
+    <!-- --------------menu----------------- -->
+    <div class="menu">
+      <div class="item">
+        <div class="tunaNigiri"></div>
       </div>
-    </div>
+      <div class="item">
+        <div class="salmonNigiri"></div>
+      </div>
+      <div class="item">
+        <div class="prawnNigiri"></div>
+      </div>
+      <div class="item">
+        <div class="tamagoNigiri"></div>
+      </div>
+      <div class="item">
+        <div class="tunaMaki"></div>
+      </div>
+      <div class="item">
+        <div class="salmonVegMaki"></div>
+      </div>
+      <div class="item">
+        <div class="ikuraRoll"></div>
+      </div>
+      <div class="item">
+        <div class="tunaTemaki"></div>
+      </div>
+      <div class="item">
+        <div class="tunaSashimi"></div>
+      </div>
+      <div class="item">
+        <div class="prawns"></div>
+      </div>
+      <div class="item">
+        <div class="wasabi"></div>
+      </div>
+      <div class="item">
+        <div class="pickledGinger"></div>
+      </div>
+      <div class="item">
+        <div class="soySauce"></div>
+      </div>
+      <div class="item">
+        <div class="misoSoup"></div>
+      </div>
+      <div class="item">
+        <div class="yakisoba"></div>
+      </div>
+      <div class="item">
+        <div class="shuCreams"></div>
+      </div>
+      <div class="item">
+        <div class="purin"></div>
+      </div>
+      <div class="clear-plate"></div>
 
-  </body>
+    </div>
+  </main>
+  <!-- --------------start page----------------- -->
+  <div class="start-page">
+    <div class="start-center">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+      <p class="mobile-landscape-notification">Please note: On a mobile device, this game is best played in landscape.</p>
+      <button class="start-game">Start!</button>
+    </div>
+  </div>
+
+
+  <!-- --------------end page----------------- -->
+  <div class="end-page">
+    <div class="end-center">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+      <p class="final-score">Your score was </p>
+      <button class="play-again">Play again?</button>
+    </div>
+  </div>
+
+</body>
 </html>

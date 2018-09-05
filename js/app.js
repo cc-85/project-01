@@ -1,8 +1,5 @@
 $(() => {
-  console.log('JS Loaded');
-
   let scoreNumber = 0;
-  let clickedItem = '';
   let currentLevel = 1;
   const $score = $('.score');
   const $items = $('.item');
@@ -15,6 +12,8 @@ $(() => {
   const $startPage = $('.start-page');
   const $endPage = $('.end-page');
   const $mainPage = $('main');
+  const $finalScore = $('.final-score');
+  const $mobileLandscapeNotification = $('.mobile-landscape-notification');
 
   const $timerScreen = $('.timer');
   const $level = $('.level');
@@ -38,26 +37,19 @@ $(() => {
     'purin'
   ];
 
-
   $startGameButton.on('click', () => {
-    //starts timer!
     startTimer();
     $startPage.hide();
     $mainPage.show();
     newOrder();
+    // selectRandomCharacter();
   });
-
-
 
   //generates an array of sushi at random
   function randomSushiGenerator(){
-    //console.log(sushiTypes);
     const randomNumber = Math.floor(Math.random()* 17);
-    //console.log(randomNumber);
-    //console.log(sushiTypes[randomNumber]);
     return sushiTypes[randomNumber];
   }
-
 
   // adds random sushi selection to bar at top
   function newOrder() {
@@ -78,31 +70,24 @@ $(() => {
 
   // function to compare player and character selections
   function winGame() {
-
     // stores the randomly generated customer order as an array for later comparison
     const characterOrderArray = $('div.character-sushi-selection div').map(function() {
       return $(this).attr('class');
     }).get();
-    //console.log(characterOrderArray);
-
     // stores the playersSelection as an array for later comparison
     const playerSelectionArray = $('div.player-selection div.plate').map(function() {
       return $(this).attr('class').replace('plate', '').replace('ui-droppable', '').replace('ui-draggable', '').replace('ui-draggable-dragging', '').trim();
     }).get();
     const playerSelectionSorted = playerSelectionArray.sort().join('');
-    console.log(playerSelectionSorted);
     const characterOrderSorted = characterOrderArray.sort().join('');
-    console.log(characterOrderSorted);
     if (playerSelectionSorted === characterOrderSorted) {
       console.log('match!');
       scoreNumber += 1000;
-      //console.log(scoreNumber);
       $score.text(scoreNumber);
     } else {
       console.log('fail');
     }
-
-    return playerSelectionSorted === characterOrderSorted;
+    //return playerSelectionSorted === characterOrderSorted;
   }
 
   // when send order button is clicked, the playersSelection function is fired
@@ -113,22 +98,21 @@ $(() => {
     newOrder();
   });
 
-  $nextLevelButton.on('click', () => {
-    //scoreNumber = 0;
+  $nextLevelButton.on('click', nextLevelRefresh);
+
+  function nextLevelRefresh() {
     clearPlate();
     $nextLevelButton.hide();
     $sendOrderButton.show();
-    console.log(scoreNumber);
     $score.text(scoreNumber);
     randomSushiGenerator();
     currentLevel++;
     $level.text(currentLevel);
     newOrder();
     startTimer();
-  });
+  }
 
   $playAgainButton.on('click', reset);
-
 
   function reset() {
     $mainPage.show();
@@ -145,9 +129,7 @@ $(() => {
 
 
   function startTimer() {
-
     let currentTime = (currentLevel * 5) + 5;
-
     $timerScreen.text(currentTime);
     let timerId = 0;
 
@@ -160,17 +142,18 @@ $(() => {
           $sendOrderButton.hide();
           $nextLevelButton.show();
         } else {
-          gameEnd();
+          endGame();
         }
       }
     }, 1000);
   }
 
 
-  function gameEnd() {
+  function endGame() {
     $mainPage.hide();
     $endPage.css('display', 'flex');
     $playAgainButton.show();
+    $finalScore.text('Your final score was ¥' + scoreNumber);
   }
 
   function clearPlate() {
@@ -180,16 +163,44 @@ $(() => {
   $clearPlateButton.on('click', clearPlate);
 
 
-  $items.draggable({
-    revert: true,
-    revertDuration: 0
-  });
 
-  $plates.droppable({
-    drop(e, ui) {
-      const className = ui.draggable.find('div').attr('class');
-      $(this).addClass(className);
-    }
-  });
+
+
+  if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+
+
+    // an item from the menu is clicked and stored in clickedItem variable
+    let clickedItem = '';
+    $items.on('click', (e) => {
+      clickedItem = $(e.target).attr('class').replace('item ', '');
+    });
+
+    // a plate div is clicked and populated with item stored in clickedItem variable
+    $plates.on('click', (e) => {
+      $(e.target).removeClass().addClass(`plate ${clickedItem}`);
+      //clickedItem = '';
+    });
+  } else {
+    $items.draggable({
+      revert: true,
+      revertDuration: 0
+    });
+
+    $plates.droppable({
+      drop(e, ui) {
+        const className = ui.draggable.find('div').attr('class');
+        $(this).addClass(className);
+      }
+    });
+  }
+
+
+  if (window.matchMedia('(orientation: portrait)').matches) {
+    //alert('Please use Landscape!');
+    $mobileLandscapeNotification.show();
+  }
+
+
+
 
 });

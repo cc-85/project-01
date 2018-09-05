@@ -40,14 +40,12 @@ body {
 
 .start-game{
   width: 300px;
-
 }
 
 main {
   display: none;
   flex-direction: column;
   justify-content: center;
-  background-color: BlanchedAlmond;
   width: 1200px;
   height: 630px;
   margin: auto;
@@ -64,9 +62,16 @@ h1 {
   height: 70%;
 }
 
+.top-bar {
+  background-color: #FAE0CB;
+}
+
 .character {
-  background-color: Thistle;
+  background-color: #FAE0CB ;
+  display: flex;
+  flex-direction: column;
   flex-grow: 1;
+  border: 2px solid #FAE0CB;
 }
 
 .middle-section {
@@ -82,7 +87,6 @@ h1 {
 }
 
 .character-sushi-selection > div {
-  /* border: 1px solid black; */
   margin: 10px 6px;
   flex-grow: 1;
   background-size: contain;
@@ -92,8 +96,7 @@ h1 {
 
 .center-block {
   display: flex;
-  //flex-direction: column;
-  height: 75%;
+  /* height: 75%; */
 }
 
 .player-selection {
@@ -270,4 +273,17 @@ button {
   background-position: center;
   border: 2px solid #FAE0CB;
   border-radius: 10px;
+}
+
+.logo {
+  background-image: url(/Users/caoimheclarke/development/project-01/assets/images/logo2.png);
+  background-color: #FAE0CB;
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 20%;
+  margin-top: 20px;
+}
+
+.mobile-landscape-notification {
+  display: none;
 }

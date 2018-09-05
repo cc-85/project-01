@@ -104,7 +104,8 @@ h1 {
   flex-wrap: wrap;
   background-color: #FDEFE6;
   flex-grow: 3;
-  width: 130px;
+  width: 90px;
+  /* width: 0; */
   background-image: url(../assets/images/bg-plateonly.jpg);
   background-size: contain;
   background-repeat: no-repeat;

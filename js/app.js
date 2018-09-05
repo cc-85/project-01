@@ -167,16 +167,17 @@ $(() => {
 
 
   if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-    screen.orientation.lock('landscape');
-
+    //screen.orientation.lock('landscape');
     // an item from the menu is clicked and stored in clickedItem variable
     let clickedItem = '';
     $items.on('touchstart', (e) => {
+      e.preventDefault();
       clickedItem = $(e.target).attr('class').replace('item ', '');
     });
 
     // a plate div is clicked and populated with item stored in clickedItem variable
     $plates.on('touchstart', (e) => {
+      e.preventDefault();
       $(e.target).removeClass().addClass(`plate ${clickedItem}`);
     });
   } else {

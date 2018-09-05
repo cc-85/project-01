@@ -186,7 +186,7 @@ h1 {
 }
 
 .prawnNigiri {
-  background-image: url(/Users/caoimheclarke/development/project-01/assets/images/prawn-nigiri.png);
+  background-image: url(../assets/images/prawn-nigiri.png);
 }
 
 .tamagoNigiri {
@@ -238,7 +238,7 @@ h1 {
 }
 
 .shuCreams {
-  background-image: url../assets/images/shu-creams.png);
+  background-image: url(../assets/images/shu-creams.png);
 }
 
 .purin {

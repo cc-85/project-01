@@ -251,6 +251,8 @@ button {
   padding: 20px;
   color: oldLace;
   background-color: #BC825B;
+  border: none;
+  box-shadow: 0px 10px 0px 0px #995E36;
 }
 
 .play-again {

@@ -166,8 +166,8 @@ $(() => {
 
 
 
-  if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-
+  if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+    screen.orientation.lock('landscape');
 
     // an item from the menu is clicked and stored in clickedItem variable
     let clickedItem = '';
@@ -178,7 +178,6 @@ $(() => {
     // a plate div is clicked and populated with item stored in clickedItem variable
     $plates.on('click', (e) => {
       $(e.target).removeClass().addClass(`plate ${clickedItem}`);
-      //clickedItem = '';
     });
   } else {
     $items.draggable({
@@ -195,10 +194,10 @@ $(() => {
   }
 
 
-  if (window.matchMedia('(orientation: portrait)').matches) {
-    //alert('Please use Landscape!');
-    $mobileLandscapeNotification.show();
-  }
+  // if (window.matchMedia('(orientation: portrait)').matches) {
+  //   //alert('Please use Landscape!');
+  //   $mobileLandscapeNotification.show();
+  // }
 
 
 

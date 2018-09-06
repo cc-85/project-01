@@ -30,7 +30,7 @@ body {
   justify-content: center;
   align-items: center;
   width: 800px;
-  height: 440px;
+  height: 470px;
   margin: auto;
   background-color: white;
   border: 3px solid #FAE0CB;
@@ -399,7 +399,7 @@ button.play-again {
   }
 
   .center-block {
-    height: 100%;
+    height: 110%;
   }
 
   .character-sushi-selection > div {
@@ -449,5 +449,9 @@ button.play-again {
 
   .chopsticks img {
     height: 100%;
+  }
+
+  .start-page, .end-page {
+    margin-left: 150px;
   }
 }

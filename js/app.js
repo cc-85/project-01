@@ -13,10 +13,11 @@ $(() => {
   const $endPage = $('.end-page');
   const $mainPage = $('main');
   const $finalScore = $('.final-score');
-  //const $mobileLandscapeNotification = $('.mobile-landscape-notification');
-
+  const $mobileLandscapeNotification = $('.mobile-landscape-notification');
   const $timerScreen = $('.timer');
   const $level = $('.level');
+  const correct = document.querySelector('audio.correct');
+  const incorrect = document.querySelector('audio.incorrect');
   const sushiTypes = [
     'tunaNigiri',
     'salmonNigiri',
@@ -84,8 +85,10 @@ $(() => {
       console.log('match!');
       scoreNumber += 1000;
       $score.text(scoreNumber);
+      correct.play();
     } else {
       console.log('fail');
+      incorrect.play();
     }
     //return playerSelectionSorted === characterOrderSorted;
   }
@@ -195,10 +198,10 @@ $(() => {
   }
 
 
-  // if (window.matchMedia('(orientation: portrait)').matches) {
-  //   //alert('Please use Landscape!');
-  //   $mobileLandscapeNotification.show();
-  // }
+  if (window.matchMedia('(orientation: portrait)').matches) {
+    //alert('Please use Landscape!');
+    $mobileLandscapeNotification.show();
+  }
 
 
 

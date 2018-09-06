@@ -87,10 +87,8 @@ $(() => {
       $score.text(scoreNumber);
       correct.play();
     } else {
-      console.log('fail');
       incorrect.play();
     }
-    //return playerSelectionSorted === characterOrderSorted;
   }
 
   // when send order button is clicked, the playersSelection function is fired

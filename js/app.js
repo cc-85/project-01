@@ -13,10 +13,12 @@ $(() => {
   const $endPage = $('.end-page');
   const $mainPage = $('main');
   const $finalScore = $('.final-score');
-  //const $mobileLandscapeNotification = $('.mobile-landscape-notification');
-
+  const $mobileLandscapeNotification = $('.mobile-landscape-notification');
   const $timerScreen = $('.timer');
   const $level = $('.level');
+  const correct = document.querySelector('audio.correct');
+  const incorrect = document.querySelector('audio.incorrect');
+  const whistle = document.querySelector('audio.whistle');
   const sushiTypes = [
     'tunaNigiri',
     'salmonNigiri',
@@ -80,14 +82,21 @@ $(() => {
     }).get();
     const playerSelectionSorted = playerSelectionArray.sort().join('');
     const characterOrderSorted = characterOrderArray.sort().join('');
-    if (playerSelectionSorted === characterOrderSorted) {
-      console.log('match!');
+    if ((playerSelectionSorted === characterOrderSorted) && (currentLevel === 1)) {
       scoreNumber += 1000;
       $score.text(scoreNumber);
+      correct.play();
+    } else if  ((playerSelectionSorted === characterOrderSorted) && (currentLevel === 2)) {
+      scoreNumber += 1500;
+      $score.text(scoreNumber);
+      correct.play();
+    } else if  ((playerSelectionSorted === characterOrderSorted) && (currentLevel === 3)) {
+      scoreNumber += 2000;
+      $score.text(scoreNumber);
+      correct.play();
     } else {
-      console.log('fail');
+      incorrect.play();
     }
-    //return playerSelectionSorted === characterOrderSorted;
   }
 
   // when send order button is clicked, the playersSelection function is fired
@@ -129,7 +138,7 @@ $(() => {
 
 
   function startTimer() {
-    let currentTime = (currentLevel * 5) + 5;
+    let currentTime = (currentLevel * 2) * 10;
     $timerScreen.text(currentTime);
     let timerId = 0;
 
@@ -138,6 +147,7 @@ $(() => {
       $timerScreen.text(currentTime);
       if(currentTime === 0) {
         clearInterval(timerId);
+        whistle.play();
         if(currentLevel < 3) {
           $sendOrderButton.hide();
           $nextLevelButton.show();
@@ -195,10 +205,10 @@ $(() => {
   }
 
 
-  // if (window.matchMedia('(orientation: portrait)').matches) {
-  //   //alert('Please use Landscape!');
-  //   $mobileLandscapeNotification.show();
-  // }
+  if (window.matchMedia('(orientation: portrait)').matches) {
+    //alert('Please use Landscape!');
+    $mobileLandscapeNotification.show();
+  }
 
 
 

@@ -30,16 +30,44 @@ body {
   justify-content: center;
   align-items: center;
   width: 800px;
-  height: 400px;
+  height: 470px;
   margin: auto;
   background-color: white;
   border: 3px solid #FAE0CB;
   border-radius: 10px;
-  padding: 40px;
+  padding: 35px;
+}
+
+.end-center {
+  width: 750px;
+  height: 400px;
+  justify-content: flex-start;
+  padding: 50px;
+}
+
+.start-center img {
+  width: 35%;
+  margin-bottom: 15px;
+}
+
+.start-center p {
+  padding: 5px;
+  margin: 5px;
+  color: #995E36;
+  text-align: center;
+}
+
+.end-center p {
+  font-size: 30px;
+  padding: 20px;
+  margin: 20px;
+  color: #995E36;
+  text-align: center;
 }
 
 .start-game{
-  width: 300px;
+  width: 225px;
+  margin-top: 5px;
 }
 
 main {
@@ -64,6 +92,8 @@ h1 {
 
 .top-bar {
   background-color: #FAE0CB;
+  color: #995E36;
+  font-size: 15px;
 }
 
 .character {
@@ -72,6 +102,7 @@ h1 {
   flex-direction: column;
   flex-grow: 1;
   border: 2px solid #FAE0CB;
+  width: 10px;
 }
 
 .middle-section {
@@ -87,7 +118,7 @@ h1 {
 }
 
 .character-sushi-selection > div {
-  margin: 10px 6px;
+  /* margin: 10px 6px; */
   flex-grow: 1;
   background-size: contain;
   background-repeat: no-repeat;
@@ -96,16 +127,15 @@ h1 {
 
 .center-block {
   display: flex;
-  /* height: 75%; */
+  height: 90%;
 }
 
 .player-selection {
   display: flex;
   flex-wrap: wrap;
   background-color: #FDEFE6;
-  flex-grow: 3;
-  width: 90px;
-  /* width: 0; */
+  flex-grow: 4;
+  width: 0;
   background-image: url(../assets/images/bg-plateonly.jpg);
   background-size: contain;
   background-repeat: no-repeat;
@@ -126,6 +156,7 @@ h1 {
   width: 0;
   background-color: #FDEFE6;
   flex-grow: 1;
+  padding-left: 40px;
 }
 .menu {
   display: flex;
@@ -177,6 +208,7 @@ h1 {
   border: 2px solid #FAE0CB;
   border-radius: 10px;
 }
+
 
 .tunaNigiri {
   background-image: url(../assets/images/tuna-nigiri.png);
@@ -247,13 +279,23 @@ h1 {
 }
 
 button {
-  height: 120px;
+  /* height: 120px; */
   font-size: 27px;
   padding: 20px;
   color: oldLace;
   background-color: #BC825B;
   border: none;
   box-shadow: 0px 10px 0px 0px #995E36;
+}
+
+button.next-level, button.send-order {
+  width: 120px;
+  height: 105px;
+}
+
+button.play-again {
+  height: 95px;
+  width: 215px;
 }
 
 .play-again {
@@ -264,9 +306,41 @@ button {
   display: none;
 }
 
+.time {
+  font-size: 40px;
+  margin: 15px 2px 0 2px;
+  color: #EFBC96;
+  font-weight: bold;
+}
+
+.timer {
+  font-size: 30px;
+  margin:  0 2px;
+  color: #995E36;
+  font-weight: bold;
+}
+
+.level-copy {
+  font-size: 20px;
+  margin: 15px 2px;
+  color: #995E36;
+}
+
 .tips-end {
   font-weight: bold;
   color: oliveDrab;
+}
+
+.tips-copy {
+  font-size: 20px;
+  margin: 2px;
+  color: #EFBC96;
+}
+
+.tips {
+  font-size: 20px;
+  margin: 2px;
+  color: #995E36;
 }
 
 .clear-plate {
@@ -287,6 +361,97 @@ button {
   margin-top: 20px;
 }
 
+.character-copy {
+  padding: 0 15px;
+  color: #995E36;
+}
+
 .mobile-landscape-notification {
   display: none;
+}
+
+
+@media only screen and (max-width: 768px) and (orientation: landscape) {
+	body {
+		-webkit-transform: scale(0.667);
+		-webkit-transform-origin: top right;
+		position: absolute;
+		top: 0;
+		width: 0;
+	}
+
+  main {
+    width: 970px;
+  }
+
+  .player-selection {
+    width: 100px;
+    flex-grow: 3;
+  }
+
+  .player-selection * {
+    width: 103px;
+    height: 88px;
+  }
+
+  .character-sushi-selection {
+    height: 20%;
+  }
+
+  .center-block {
+    height: 110%;
+  }
+
+  .character-sushi-selection > div {
+    margin: 0;
+  }
+
+  .character{
+    width: 15px;
+  }
+
+  .logo {
+    margin: 10px 0 0 10px;
+  }
+
+  .menu * {
+    width: 97px;
+  }
+
+  .menu {
+    height: 22%;
+  }
+
+  .top-content {
+    height: 52%;
+  }
+
+  .level-copy, .tips, .tips-copy {
+    margin: 0;
+    font-size: 18px;
+  }
+
+  .timer {
+    margin: 0;
+    font-size: 20px;
+  }
+
+  .time {
+    font-size: 30px;
+    margin: 10px 0 0 0;
+  }
+
+  button.next-level, button.send-order {
+    width: 100px;
+    height: 85px;
+    font-size: 22px;
+  }
+
+  .chopsticks img {
+    height: 100%;
+  }
+
+  .start-page, .end-page {
+    margin-left: 150px;
+  }
 }

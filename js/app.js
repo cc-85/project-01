@@ -13,7 +13,7 @@ $(() => {
   const $endPage = $('.end-page');
   const $mainPage = $('main');
   const $finalScore = $('.final-score');
-  const $mobileLandscapeNotification = $('.mobile-landscape-notification');
+  //const $mobileLandscapeNotification = $('.mobile-landscape-notification');
 
   const $timerScreen = $('.timer');
   const $level = $('.level');

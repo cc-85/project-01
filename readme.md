@@ -10,77 +10,52 @@
 * Javascript (ECMAScript6) + jQuery
 * GitHub
 
-## My Game - Sushi Squish!
+## My Game - Sushi Squish
 
-![Codémon Logo](/css/images/CODEMON-logo.png)
+<img width="432" alt="screen shot 2018-09-07 at 09 51 15" src="https://user-images.githubusercontent.com/32750083/45208957-be6bdd00-b283-11e8-9120-37a295b2cc99.png">
 
 ### Game overview
-Codémon is a simplified version of the 1996 Gameboy game Pokémon Red/Blue.
-Players select and control one of three Codémon and battle them against each
-other.
+Players pick from a list of sushi icons to match a randomly generated selection in a set amount of time.
 
 ### Game Instructions
-1. Players start in the bedroom of the original character from the Pokémon games.
-They can move around using the keyboard arrow keys. When they walk over to the
-other character who is sitting on the computer after a short animation the main
-game begins.
-![screenshot1](/screenshots/screenshot1.png)
+1. Players begin on a start page which outlines basic instructions. Once ready they can click the 'Start' button to begin play.
 
-2. Once at the main screen players enter their names and click the 'Fight' button.
-To play the one player game click on the 'Play against the computer button'.
-![screenshot2](/screenshots/screenshot2.png)
+<img width="1280" alt="screenshot-1" src="https://user-images.githubusercontent.com/32750083/45218970-3bf21600-b2a1-11e8-8db1-ec465c3d4161.png">
 
-3. The player is then taken to the Codémon selection screen where they can choose
-the character they would like to control.
-![screenshot3](/screenshots/screenshot3.png)
+2. On the main page, players will see a randomly generated 'order' at the top of the screen. In the middle of the page is an empty plate, which player can fill by clicking and dragging from the 'menu' at the bottom of the screen. The 'send order' button should then be clicked to submit the order. If the selection the player has made matches the randomly generated order at the top, the player will score points.
 
-4. After a short animation the battle begins. Players take it in turns to click
-on their Codémon's moves.
-![screenshot6](/screenshots/screenshot6.png)
+<img width="1280" alt="screenshot-2" src="https://user-images.githubusercontent.com/32750083/45218989-52986d00-b2a1-11e8-9ae0-71541aa43bec.png">
 
-5. Once one of the Codémon's health reaches 0 it faints and the other player is
-the winner.
-![screenshot5](/screenshots/screenshot5.png)
+3. When the time runs out, the player can move on to the next level, where the orders are bigger and they can score more points per order.
+
+<img width="1280" alt="screenshot3" src="https://user-images.githubusercontent.com/32750083/45218998-5deb9880-b2a1-11e8-8b8e-ee26a6546485.png">
+
+4. After the timer has run out on the third level, the end page will display, showing the player how many points they have scored and giving them the option to play again.
+
+<img width="1280" alt="screenshot4" src="https://user-images.githubusercontent.com/32750083/45219005-67750080-b2a1-11e8-9154-80f2a3ed377b.png">
 
 ### Process
 
-After drawing out my wireframes I identified the four main views the user would
-go through to play the game. The most complex of these was the battle itself so
-I started there.
+I used my initial wireframes to construct a basic layout for my main play page, I then used this to get the basic functionality working.
 
-I created 2 Codémon characters, some buttons and simple moves to start working on
-how the battle mechanics would work. Later on in the project I added in attack
-and defence stats as well as attack range to add a degree of randomness to the
-game.
+I started by getting selected pieces to move from the menu to the plate, then randomly generating orders. The next step would be to compare the two and produce outcomes depending on whether the two matched or not.
 
-Once I had the basic battle functionality working I move onto the user journey
-creating the character selection screen and start screen. I added more structure
-to my html file and also started to create the css. After I had completed this I
-combined the two files into one and began working on refining the game and adding
-in animations.
+Once the basics of the game were working, I added second and third levels with bigger randomly generated orders and more time on the timer. I also created a start page with room for basic instructions and an end page which would show the player their score.
 
-Finally I added the game intro scene with the controllable trainer character.
+Next I looked into making the game function on mobile. I had to amend the functionality so that different click/touch options would be registered on the necessary device. The mobile version also needed some layout tweaks, so I next focussed on CSS for both desktop and mobile versions. Lastly, I added a few sounds throughout the game.
 
 ### Challenges
 
-Even though in the final game there are only three Codémon to choose from there
-are a lot of variables and functions to keep track of. This mean that I had to
-try and be as consistent as possible with naming conventions and scope. It
-was also challenging to find a formula to calculate the result of attacks which
-kept the game fair and well paced.
+Adding the option to drag and drop the sushi pieces on desktop was quite challenging. I managed to get the basics of it in place but needed help to get it to function how I wanted it to and not alter the layout of the page in the process.
+
+A lot of my game depends on moving classes around or storing and comparing information about classes. I initially found this difficult but believe I have a much better understanding of it now.
 
 ### Wins
 
-Adding the audio, animation, images and timing events really brought the game to
-life. Creating the computer player and alternative views when playing against it
-was also very rewarding (screen shot of the 1 player game below). I was really
-pleased to be able to add additional start screen with the controllable character
-as it's a nice callback to the original games and gave me the opportunity to add a more reactive feature.
+I was really proud of getting the click and drop functionality working on mobile, as I'd faced a few problems whilst trying to implement it but got through them all on my own by doing research online.
 
-![screenshot7](/screenshots/screenshot7.png)
+The animation and overall design on the game looks exactly as I wanted them to. It gives the look and feel I wanted it to have and I think adds to the whole game experience.
 
 ## Future features
 
-If I had more time I would work on making the game mobile responsive. It would
-also be good to add more characters and a bigger variety of moves, as well as
-adding moves which could disable your opponent for a set number of turns.
+I'd like to add some more complexities to orders, such as perhaps having orders where certain pieces can't sit next to each other on the plate or orders where certain items must be included or left out. It would also be good to make a 2 player option.

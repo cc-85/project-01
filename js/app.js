@@ -40,13 +40,6 @@ $(() => {
     'purin'
   ];
 
-  $startGameButton.on('click', () => {
-    startTimer();
-    $startPage.hide();
-    $mainPage.show();
-    newOrder();
-  });
-
   //generates an array of sushi at random
   function randomSushiGenerator(){
     const randomNumber = Math.floor(Math.random()* 17);
@@ -99,16 +92,6 @@ $(() => {
     }
   }
 
-  // when send order button is clicked, the playersSelection function is fired
-  $sendOrderButton.on('click', () => {
-    winGame();
-    clearPlate();
-    randomSushiGenerator();
-    newOrder();
-  });
-
-  $nextLevelButton.on('click', nextLevelRefresh);
-
   function nextLevelRefresh() {
     clearPlate();
     $nextLevelButton.hide();
@@ -120,8 +103,6 @@ $(() => {
     newOrder();
     startTimer();
   }
-
-  $playAgainButton.on('click', reset);
 
   function reset() {
     $mainPage.show();
@@ -140,7 +121,6 @@ $(() => {
     let currentTime = (currentLevel * 2) * 10;
     $timerScreen.text(currentTime);
     let timerId = 0;
-
     timerId = setInterval(() => {
       currentTime--;
       $timerScreen.text(currentTime);
@@ -168,11 +148,28 @@ $(() => {
     $plates.removeClass().addClass('plate');
   }
 
+  $startGameButton.on('click', () => {
+    startTimer();
+    $startPage.hide();
+    $mainPage.show();
+    newOrder();
+  });
+
+  // when send order button is clicked, the playersSelection function is fired
+  $sendOrderButton.on('click', () => {
+    winGame();
+    clearPlate();
+    randomSushiGenerator();
+    newOrder();
+  });
+
+  $nextLevelButton.on('click', nextLevelRefresh);
+
+  $playAgainButton.on('click', reset);
+
   $clearPlateButton.on('click', clearPlate);
 
-
   if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-    //screen.orientation.lock('landscape');
     // an item from the menu is clicked and stored in clickedItem variable
     let clickedItem = '';
     $items.on('touchstart', (e) => {

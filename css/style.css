@@ -30,7 +30,7 @@ body {
   justify-content: center;
   align-items: center;
   width: 800px;
-  height: 470px;
+  height: 500px;
   margin: auto;
   background-color: white;
   border: 3px solid #FAE0CB;
@@ -80,7 +80,6 @@ main {
 }
 
 h1 {
-  font-size: 15px;
   display: none;
 }
 
@@ -96,7 +95,7 @@ h1 {
   font-size: 15px;
 }
 
-.character {
+.side-bar {
   background-color: #FAE0CB ;
   display: flex;
   flex-direction: column;
@@ -118,7 +117,6 @@ h1 {
 }
 
 .character-sushi-selection > div {
-  /* margin: 10px 6px; */
   flex-grow: 1;
   background-size: contain;
   background-repeat: no-repeat;
@@ -158,6 +156,7 @@ h1 {
   flex-grow: 1;
   padding-left: 40px;
 }
+
 .menu {
   display: flex;
   flex-wrap: wrap;
@@ -183,7 +182,6 @@ h1 {
 
 .plate:hover {
   border: 2px solid rgba(255, 255, 255, 1);
-  /* border-radius: 10px; */
 }
 
 @keyframes squidge {
@@ -279,7 +277,6 @@ h1 {
 }
 
 button {
-  /* height: 120px; */
   font-size: 27px;
   padding: 20px;
   color: oldLace;
@@ -293,13 +290,10 @@ button.next-level, button.send-order {
   height: 105px;
 }
 
-button.play-again {
-  height: 95px;
-  width: 215px;
-}
-
 .play-again {
   display: none;
+  height: 95px;
+  width: 215px;
 }
 
 .next-level {
@@ -326,11 +320,6 @@ button.play-again {
   color: #995E36;
 }
 
-.tips-end {
-  font-weight: bold;
-  color: oliveDrab;
-}
-
 .tips-copy {
   font-size: 20px;
   margin: 2px;
@@ -353,7 +342,7 @@ button.play-again {
 }
 
 .logo {
-  background-image: url(../assets/images/logo2.png);
+  background-image: url(../assets/images/sushi-squish-logo.png);
   background-color: #FAE0CB;
   background-size: contain;
   background-repeat: no-repeat;
@@ -361,7 +350,7 @@ button.play-again {
   margin-top: 20px;
 }
 
-.character-copy {
+.game-copy {
   padding: 0 15px;
   color: #995E36;
 }
@@ -406,7 +395,7 @@ button.play-again {
     margin: 0;
   }
 
-  .character{
+  .side-bar{
     width: 15px;
   }
 

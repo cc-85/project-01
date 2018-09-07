@@ -19,6 +19,7 @@ $(() => {
   const correct = document.querySelector('audio.correct');
   const incorrect = document.querySelector('audio.incorrect');
   const whistle = document.querySelector('audio.whistle');
+  const pop = document.querySelector('audio.pop');
   const sushiTypes = [
     'tunaNigiri',
     'salmonNigiri',
@@ -44,7 +45,6 @@ $(() => {
     $startPage.hide();
     $mainPage.show();
     newOrder();
-    // selectRandomCharacter();
   });
 
   //generates an array of sushi at random
@@ -136,7 +136,6 @@ $(() => {
     startTimer();
   }
 
-
   function startTimer() {
     let currentTime = (currentLevel * 2) * 10;
     $timerScreen.text(currentTime);
@@ -158,7 +157,6 @@ $(() => {
     }, 1000);
   }
 
-
   function endGame() {
     $mainPage.hide();
     $endPage.css('display', 'flex');
@@ -171,9 +169,6 @@ $(() => {
   }
 
   $clearPlateButton.on('click', clearPlate);
-
-
-
 
 
   if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
@@ -189,6 +184,7 @@ $(() => {
     $plates.on('touchstart', (e) => {
       e.preventDefault();
       $(e.target).removeClass().addClass(`plate ${clickedItem}`);
+      pop.play();
     });
   } else {
     $items.draggable({
@@ -200,17 +196,13 @@ $(() => {
       drop(e, ui) {
         const className = ui.draggable.find('div').attr('class');
         $(this).addClass(className);
+        pop.play();
       }
     });
   }
 
-
   if (window.matchMedia('(orientation: portrait)').matches) {
-    //alert('Please use Landscape!');
     $mobileLandscapeNotification.show();
   }
-
-
-
 
 });

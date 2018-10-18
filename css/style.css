@@ -198,6 +198,26 @@ h1 {
   }
 }
 
+@keyframes text-squidge {
+  0%, 20% {
+      -webkit-transform: translate(0%, 0%) scale(1.1);
+              transform: translate(0%, 0%) scale(1.1);
+
+    }
+    50%, 70% {
+      -webkit-transform: translate(0%, 0%) scale(1);
+              transform: translate(0%, 0%) scale(1);
+    }
+    100% {
+      -webkit-transform: translate(0%, 0%) scale(1.1);
+              transform: translate(0%, 0%) scale(1.1);
+    }
+}
+
+button:focus {
+  outline:0;
+}
+
 .item > div {
   background-size: contain;
   background-repeat: no-repeat;
@@ -298,7 +318,10 @@ button.next-level, button.send-order {
 
 .next-level {
   display: none;
+  animation: text-squidge 1s linear infinite
+  /* box-shadow: 3px 3px 15px #666; */
 }
+
 
 .time {
   font-size: 40px;

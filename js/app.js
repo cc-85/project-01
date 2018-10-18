@@ -63,6 +63,12 @@ $(() => {
       .addClass(randomSushiGenerator);
   }
 
+  function clearOrder() {
+    $('.character-sushi-selection')
+      .find('div')
+      .removeClass(sushiTypes.join(' '));
+  }
+
   // function to compare player and character selections
   function winGame() {
     // stores the randomly generated customer order as an array for later comparison
@@ -127,9 +133,11 @@ $(() => {
       if(currentTime === 0) {
         clearInterval(timerId);
         whistle.play();
+        clearOrder();
         if(currentLevel < 3) {
           $sendOrderButton.hide();
           $nextLevelButton.show();
+          clearPlate();
         } else {
           endGame();
         }

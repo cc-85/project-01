@@ -7,7 +7,7 @@
 
 * HTML5 + HTML5 Audio
 * CSS Animation
-* Javascript (ECMAScript6) + jQuery
+* JavaScript (ECMAScript6) + jQuery
 * GitHub
 
 ## My Game - Sushi Squish
